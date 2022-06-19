@@ -1,7 +1,7 @@
 
 import java.util.Stack;
 
-public class Main{
+public class StackExample{
 	
 	public static void main(String[] args) {
 		
