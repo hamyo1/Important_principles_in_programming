@@ -29,7 +29,7 @@ function linearFunc(arr)
     }
 }
 
-//Big O(n^2) [C (Okay)]
+//Big O(n^2) [E (Bad)]
 function squere(n)
 {
     for(let i = 0; i < n; i++)
@@ -41,7 +41,7 @@ function squere(n)
     }
 }
 
-//Big O(n^3)
+//Big O(n^3) [E (Bad)]
 function cube(n)
 {
     for(let i = 0; i < n; i++)
@@ -56,7 +56,7 @@ function cube(n)
     }
 }
 
-//Big O(log n) // 
+//Big O(log n) // [C (Okay)] 
 //[log 8]=3 which mean [log base 2 of 8 is 3] 
 //for example ?^?=8 the base need to be allways 2 so the real question is 2^?=8 and then yo got 3
 function logFunc(n)
@@ -85,4 +85,60 @@ function logn(n)
     }
 }
 
-//O(n log n) [D (Barely passing]
+//O(n log n) [D (Barely passing] 
+//if we take n as 8 . so O(n log n) = > O(n * (log n)) = > 8 * 3= 24 iterations
+function nLogNFunc(n)
+{
+    let y =n;
+    while(n<1)
+    {
+        n = Math.floor(n/2);
+        for(let i =1 ;i<=y;i++)
+        {
+            console.log(i);
+        }
+    }
+}
+
+
+//O(2^n)  
+function fib(n)
+{
+    if(n===0)
+    {
+        return 0;
+    }
+    if(n === 0 )
+    {
+        return 1;
+    }
+    return fib(n-1) + fib(n-2);
+}
+//                (its fibonachi)
+//                         fib(4)
+//                       /      \
+//                    /            \
+//                 /                  \
+//            fib(3)                    fib(2)                      2^1     level 1  
+//          /       \                  /       \
+//    fib(2)        fib(1)         fib(1)       fib(0)             2^2     level 2
+//    /   \         /   \          /   \         /   \ 
+//fib(1)  fib(0) *fib() fib()   fib()  fib()  fib()  fib()*         2^3     level 3
+//                                  
+//                                     in real its O(2^n-1) = 2^3  but becuse we not consider constants its O(2^n) for the worst case
+
+
+//O(n!)  
+function f(n)
+{
+    if(n===0)
+    {
+        console.log("***************");
+        return;
+    }
+
+    for(let i=0 ; i<n ; i++)
+    {
+        f(n-1);
+    }
+}
